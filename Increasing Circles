@@ -1,0 +1,97 @@
+ int circlespread= 5; //
+int circlespread2= 5; //
+int circlespread3= 5; //
+int circlespread4= 4; //
+int circlespread5= 5;
+int circlespread6= 5;
+int circlespread7= 5;
+int circlespread8= 4;
+float X = 0;  // declairing no offset
+float Y = 0;  // declairing no offset
+float X2 = 0; //declairing no offset
+float Y2 = 0; //declairing no offset
+boolean onToken = false;  //
+int i=255; //stroke colour
+
+
+void setup(){ //Sets up the  screen
+
+  size (700, 700);
+  strokeWeight(2);
+  smooth();
+}
+
+void draw(){
+
+background (0); // background black
+
+
+if (mousePressed == true){
+  X = mouseX; //when mouse is pressed x is the value of  mousex
+  Y = mouseY; //when mouse  is pressed y is the value of mousey
+  onToken = true; 
+}
+;
+  if(onToken == true){ //creates a series of cirles. when circle is 200 by 200 start new circle
+  noFill();
+  strokeWeight(15);
+  stroke(i);  // stroke colour declaration, unsure why it goes yellow
+  ellipse(X,Y,circlespread,circlespread);
+  circlespread = circlespread+5;};
+  i = i-10;
+    if (circlespread >=  200){
+      
+       noFill();
+      strokeWeight(11);
+      ellipse(X,Y,circlespread2,circlespread2);
+      circlespread2 = circlespread2+4;};
+ 
+          if(circlespread2 >=  200){
+          
+           noFill();
+          strokeWeight(7);
+          ellipse(X,Y,circlespread3,circlespread3);
+          circlespread3 = circlespread3+2;};
+  
+              if(circlespread3 >=  200){
+            
+               noFill();
+              strokeWeight(2);
+              ellipse(X,Y,circlespread4,circlespread4);
+              circlespread4 = circlespread4+1;};
+
+if (mousePressed == true){ //this signals to creat another set of circles at the same time
+  X2 = mouseX;
+  Y2 = mouseY;
+  onToken = true;
+}
+;
+  if(onToken == true){
+  noFill();
+  strokeWeight(1);
+  stroke(255); 
+  ellipse(X2,Y2,circlespread5,circlespread5);
+  circlespread5 = circlespread5+4;};
+
+    if (circlespread >=  200){
+      
+       noFill();
+      strokeWeight(1);
+      ellipse(X2,Y2,circlespread6,circlespread6);
+      circlespread6 = circlespread6+3;};
+ 
+          if(circlespread6 >=  200){
+          
+           noFill();
+          strokeWeight(1);
+          ellipse(X,Y,circlespread7,circlespread7);
+          circlespread7 = circlespread7+1;};
+  
+              if(circlespread7 >=  200){
+            
+               noFill();
+              strokeWeight(2);
+              ellipse(X,Y,circlespread8,circlespread8);
+              circlespread8 = circlespread8+1;};
+
+}
