@@ -1,0 +1,51 @@
+void setup(){
+
+  size (1120, 700);
+background (204);
+ellipseMode (RADIUS);
+
+}
+void draw(){
+strokeWeight(2);
+
+drawRobot(400,550);
+drawRobot(200,550);
+
+}
+void drawRobot(int x, int y){
+  //Neck
+stroke(102);
+line (x+46, y-5, x+46, y-75);
+line (x+56, y-5, x+56, y-75);
+line (x+66, y-5, x+66, y-75);
+
+// Antennae
+line (x+55, y-80, x-20, y-155);
+line (x+55, y-80, x+86, y-175);
+line (x+55, y-80, x+122, y-155);
+
+
+// Body
+noStroke();
+fill (102);
+ellipse (x+45, y+125, 33, 33);
+fill (0);
+rect (x, y, 90, 120);
+fill (102);
+rect (x, y-5, 90, 6);
+
+//Head
+fill (0);
+ellipse (x+56, y-80, 45, 45); // head
+fill(255);
+ellipse (x+68, y-80, 14, 14);//big eye
+fill (0);
+ellipse (x+75, y-77, 3, 3); // pupil
+fill (153);
+ellipse (x+53, y-100, 5, 5);
+ellipse (x+76, y-55, 4, 4);
+ellipse (x+85, y-100, 3, 3);
+}
+
+//x is  220
+//y is 575
