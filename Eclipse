@@ -1,0 +1,66 @@
+float XP= 50;// X position of Circle
+float speed = 1;// increase value of x
+
+
+void setup() {
+
+  size (750, 500);
+}
+
+void draw() {
+
+  background (230); // set value of background  (Stage 1)
+
+  fill(#FFF708); // fill of fixed circle "sun"
+
+  stroke(#FFF708); //  stroke colour of sun
+  ellipse(350, 150, 100, 100); //sun
+
+  noStroke();  //moon
+  fill (250);
+  ellipse(XP, 150, 100, 100);
+  XP += speed;//increase the value of XP
+
+
+
+  if (XP >= 250 ) { // first segmant of the eclipse
+    background(map(XP, 250, 350, 230, 0)); // map allows a fade of the background as the moon eclipses the sun
+    stroke(255);
+    strokeWeight(1);
+    fill(#FFF708);
+    ellipse(350, 150, 100, 100);
+
+    fill(map(XP, 250, 350, 230, 0));  //changes the colour of the moon to the same colour of the background
+    stroke(0);
+    strokeWeight(0.1);
+    ellipse(XP, 150, 100, 100);
+  }
+
+
+
+
+
+  if (XP >= 350) {  // second segmant of the eclipse
+    background(map(XP, 350, 450, 0, 230)); // allows the background to lighten
+    stroke(255);
+    strokeWeight(1);
+    fill(#FFF708);
+    ellipse(350, 150, 100, 100);
+
+    fill(map(XP, 350, 450, 0, 230)); // allows the moon to become the same colour as moon
+    stroke(0);
+    strokeWeight(0.1);
+    ellipse(XP, 150, 100, 100);
+  }
+
+  if (XP >=450) {  // allows the conditions of (Stage1)
+
+    background (230);
+    fill(#FFF708);
+    ellipse(350, 150, 100, 100);
+
+    noStroke(); 
+    fill (250);
+    ellipse(XP, 150, 100, 100);
+  }
+}
